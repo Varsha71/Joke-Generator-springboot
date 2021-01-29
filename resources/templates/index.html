@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Joke Generator site</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body class="text-center">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div>Joke Generator</div>
+</nav>
+
+<br>
+
+<form action="" method="get" id="frm">
+<input type="hidden" id="cate" name="cate" value="" />
+
+<button class="btn btn-primary" id="Programming">Programming</button>
+<button class="btn btn-primary" id="Pun">Pun</button>
+<button class="btn btn-primary" id="Spooky">Spooky</button>
+<button class="btn btn-primary" id="Christmas">Christmas</button>
+
+</form>
+
+<br>
+<div class="card text-dark bg-light mb-3" style="margin-left: 100px ;margin-right: 100px">
+  <h5 th:text=${resp.category} class="card-header"></h5>
+  <div class="card-body">
+  <span>
+  <ul class="list-inline badge bg-info text-light">
+<li class="list-inline-item">Joke Type:</li>
+<li th:text=${resp.type} class="list-inline-item"></li>
+</ul>
+</span>
+  <span><ul class="list-inline badge bg-success">
+<li class="list-inline-item">Error Status:</li>
+<li th:text=${resp.error} class="list-inline-item"></li></ul></span>
+   
+    <div th:text=${resp.joke} class="card-text"></div>
+    <div th:text=${resp.setup} class="card-text"></div>
+    <div th:text=${resp.delivery} class="card-text"></div>
+   
+  </div>
+</div>
+
+<script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>
